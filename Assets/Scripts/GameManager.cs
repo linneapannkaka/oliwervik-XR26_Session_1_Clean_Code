@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        ui.ShowStatus("GAME OVER!");
+        ui.GameResult("GAME OVER!");
         ui.ShowGameOverPanel(true);
         Invoke(nameof(RestartGame), 2f);
     }
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         isGameOver = true;
-        ui.ShowStatus("YOU WIN!");
+        ui.GameResult("YOU WIN!");
         ui.ShowGameOverPanel(true);
         Invoke(nameof(RestartGame), 2f);
     }

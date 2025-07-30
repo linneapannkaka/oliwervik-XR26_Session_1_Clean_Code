@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider healthBar;
     [SerializeField] private TextMeshProUGUI gameStatusText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI gameResultText;
     [SerializeField] private GameObject gameOverPanel;
 
 
@@ -37,6 +38,12 @@ public class UIManager : MonoBehaviour
     {
         if (gameStatusText != null)
             gameStatusText.text = message;
+    }
+
+    public void GameResult(string message)
+    {
+        if (gameResultText != null)
+            gameResultText.text = message;
     }
 
     public void ShowGameOverPanel(bool show)

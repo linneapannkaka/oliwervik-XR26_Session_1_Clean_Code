@@ -1437,6 +1437,7 @@ MonoBehaviour:
   healthBar: {fileID: 1031782362}
   gameStatusText: {fileID: 1779772983}
   timerText: {fileID: 788424806}
+  gameResultText: {fileID: 1780318723}
   gameOverPanel: {fileID: 938857967}
 --- !u!4 &1232303521
 Transform:
@@ -2465,7 +2466,7 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
