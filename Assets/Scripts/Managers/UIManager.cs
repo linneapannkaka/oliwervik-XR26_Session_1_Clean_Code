@@ -5,28 +5,12 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [Header("UI Elemets")]
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private Slider healthBar;
     [SerializeField] private TextMeshProUGUI gameStatusText;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI gameResultText;
     [SerializeField] private GameObject gameOverPanel;
 
-
-    public void SetScore(int score)
-    {
-        if (scoreText != null)
-            scoreText.text = $"Score: {score}";
-    }
-
-    public void SetHealth(float current, float max)
-    {
-        if (healthBar != null)
-        {
-            healthBar.maxValue = max;
-            healthBar.value = current;
-        }
-    }
+    // Generel clean kod, men lägg till Debug log ifall något av nedanstående element = null
 
     public void SetTimer(float time)
     {

@@ -10,16 +10,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 0.5f;
 
     [Header("Stats")]
-    private float maxHealth = 30f;
+    [SerializeField] private float maxHealth = 30f;
     private float health;
     private int score;
 
     private Rigidbody rb;
     private bool isGrounded;
-    private float yaw;
+    private float yaw; // Rörelse, t.ex typ en term för rotation av ett slag, som en flygplans-joystick? Kolla vilken
 
     public event Action<int> OnScoreChanged;
-    public event Action<float, float> OnHealthChanged;
+    public event Action<float, float> OnHealthChanged; // Like a megaphone, "I took damage" instead of "HealthBar you better change now"
     public event Action OnPlayerDied;
 
     [SerializeField] private PlayerInputHandler input;
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
         Cursor.lockState = CursorLockMode.Locked;
 
-        OnHealthChanged?.Invoke(health, maxHealth);
-        OnScoreChanged?.Invoke(score);
+        OnHealthChanged?.Invoke(health, maxHealth); // Feedback från Totte, vad gör health och score i detta script om man ska följa SOLID
+        OnScoreChanged?.Invoke(score); // Välj vad detta script gör, ett "område" enligt solid
     }
 
     // Update is called once per frame
